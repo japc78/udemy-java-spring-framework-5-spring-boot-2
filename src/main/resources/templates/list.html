@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spring Boot App - List</title>
+  </head>
+  <body>
+    <h1 th:text="${title}"></h1>
+
+    <div th:if="${userList.size() == 0}">There are not user on list</div>
+
+    <table th:if="${!userList.isEmpty()}">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>email</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr th:each="user : ${userList}">
+          <td th:text="${user.name}"></td>
+          <td th:text="${user.surname}"></td>
+          <td th:text="${user.email}"></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <table th:if="${!userList2.isEmpty()}">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>email</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr th:each="user : ${userList2}">
+          <td th:text="${user.name}"></td>
+          <td th:text="${user.surname}"></td>
+          <td th:text="${user.email}"></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </body>
+</html>

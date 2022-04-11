@@ -1,0 +1,24 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spring Boot App - Send params</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+
+</head>
+<body>
+  <h1 th:text="${{title}}"></h1>
+  <ul>
+    <li>
+      <a th:href="@{/params/one-param(text='Hello Spring Boot')}">/params/one-param?text=hello Spring Boot</a>
+    </li>
+    <li>
+      <a th:href="@{/params/multiple-params/(hello='Hello Spring Boot', number=22)}">/params/multiple-params?hello=hello Spring Boot&number=22</a>
+    </li>
+    <li>
+      <a th:href="@{/params/multiple-params-request/(hello='Hello Spring Boot', number=22)}">/params/multiple-params-request?hello=hello Spring Boot&number=22</a>
+    </li>
+  </ul>
+</body>
+</html>

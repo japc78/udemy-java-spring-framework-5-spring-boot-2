@@ -1,0 +1,27 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spring Boot App - Path Variables</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+
+</head>
+<body>
+  <h1 th:text="${{title}}"></h1>
+  <ul>
+    <li>
+      <a th:href="@{/variables/string/} + 'Hello path variable'">/variables/string/Hello path variable</a>
+    </li>
+    <li>
+      <a th:href="@{/variables/string/} + 'Hello path variable' + '/' + 22">/variables/string/Hello path variable/7</a>
+    </li>
+    <li>
+      <a th:href="@{/variables/string/} + ${'Hello path variable'} + '/' + ${22}">/variables/string/Hello path variable/7</a>
+    </li>
+    <li>
+      <a th:href="@{/variables/string/} + ${title} + '/' + ${22}">/variables/string/Hello path variable/7</a>
+    </li>
+  </ul>
+</body>
+</html>
